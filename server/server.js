@@ -1,8 +1,12 @@
 var express = require('express');
+var bodyParser = require('body-Parser');
 var index = require('./routes/index')
 
 var app = express();
 
+app.use(express.static('server/public'));
+
+app.use(bodyParser.json());
 app.get('/',index);
 
 
