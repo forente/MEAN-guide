@@ -14,9 +14,6 @@ Mongo.once('open', function () {
 });
 
 
-
-
-
 router.post('/add', function(request, response, next){
   var kitty = new Cat({name: request.body.name});
   console.log('');
@@ -24,8 +21,8 @@ router.post('/add', function(request, response, next){
     if (err) {
       console.log('meow %s', err);
     }
-    response.send(kitty.toJSON());
-    next();
+    response.send(kitty);
+    
   });
 });
 
