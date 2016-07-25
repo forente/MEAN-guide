@@ -21,6 +21,7 @@ router.get('/', function(req,res,next){
 
 router.post('/add', function(request, response, next){
   var kitty = new Cat({name: request.body.name});
+  console.log('');
   kitty.save(function(err){
     if (err) {
       console.log('meow %s', err);
