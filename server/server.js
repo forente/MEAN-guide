@@ -7,7 +7,8 @@ var app = express();
 app.use(express.static('server/public'));
 
 app.use(bodyParser.json());
-app.get('/',index);
+
+app.use('/',index);
 
 
 var server = app.listen(3000, function(){

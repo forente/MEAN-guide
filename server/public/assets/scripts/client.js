@@ -9,6 +9,7 @@ app.controller("IndexController", ['$scope', '$http', function($scope, $http){
            }
            $scope.cat = {};
            $scope.cats = response.data;
+           console.log($scope.cats);
            return response.data;
        })
    };

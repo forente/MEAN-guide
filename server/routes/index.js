@@ -15,9 +15,7 @@ Mongo.once('open', function () {
 
 
 
-router.get('/', function(req,res,next){
-    res.sendFile(path.join(__dirname, '../public/views/index.html'));
-});
+
 
 router.post('/add', function(request, response, next){
   var kitty = new Cat({name: request.body.name});
@@ -40,6 +38,10 @@ router.get('/cats', function(request, response, next){
 
     next();
   });
+});
+
+router.get('/', function(req,res,next){
+    res.sendFile(path.join(__dirname, '../public/views/index.html'));
 });
 
 module.exports = router;
